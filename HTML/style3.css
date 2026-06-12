@@ -1,0 +1,55 @@
+body{
+    text-align: center;
+}
+
+div{
+    height: 100px;
+    width: 100px;
+    display: inline-block;
+    border: 2px solid black;
+    transition-property: all;
+    transition-duration: 1s;
+}
+
+#container{
+    height: 200px;
+    width: 800px;
+    display: flex;
+}
+
+#box1{
+    background-color: aqua;
+    
+}
+#box2{
+    background-color:blanchedalmond;
+    
+}
+#box3{
+    background-color:blueviolet;
+    
+}
+#box4{
+    background-color:chartreuse;
+    
+}
+#box5{
+    background-color:darkgreen;
+    
+}
+
+div:hover{
+    background-color: sienna;
+    transform: rotate(180deg);
+    /*transform: translateY(200px);*/
+}
+div:active{
+    background-color: darkgreen;
+}
+
+#box5:hover{
+    font-size: 20px;
+    transition-property: all;
+    transition-timing-function: steps(5);
+}
+

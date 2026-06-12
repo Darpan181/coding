@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidate Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="Candidate_Dash.css">
+</head>
+<body>
+    <div class="main">
+        <div class="side-nav">
+            <div class="logo-brand">
+                <img src="https://jobbox-nextjs-v3.vercel.app/assets/imgs/template/jobhub-logo.svg" alt="logo-brand">
+            </div>
+            <div class="profile-pic">
+                <img src="https://cdn-icons-png.flaticon.com/512/4042/4042171.png" alt="profile-pic">
+                <select class="cand-name">
+                    <option>Darpan Pawar</option>
+                    <option>Deependra Singh</option>
+                    <option>Chirag Baniya</option>
+                    <option>Devansh Mishra</option>
+                </select>
+            </div>
+            <div class="side-link">
+                <ul>
+                    <a href="/"><li class="side-link-item"><i class="fa-solid fa-border-all"></i> Dashboard</li></a>
+                    <a href="Profile.html"><li class="side-link-item"><i class="fa-solid fa-user"></i> My Profile</li></a>
+                    <a href="/"><li class="side-link-item"><i class="fa-solid fa-file-lines"></i> Resume</li></a>
+                    <a href="/"><li class="side-link-item"><i class="fa-solid fa-message"></i> Messages</li></a>
+                    <a href="/"><li class="side-link-item"><i class="fa-solid fa-bell"></i> Job Alert</li></a>
+                    <a href="/"><li class="side-link-item"><i class="fa-solid fa-bookmark"></i> Saved Job</li></a>
+                    <a href="/"><li class="side-link-item"><i class="fa-solid fa-gear"></i> Account Settings</li></a>
+                    <a href="/"><li class="side-link-item"><i class="fa-solid fa-trash"></i> Delete Account</li></a>
+                </ul>
+            </div>
+            <div class="status-bar">
+                <h3>89%</h3>
+                <div></div>
+                <h4>Profile Complete</h4>
+                <a href="/">Logout</a>
+            </div>
+        </div>
+        <div class="dashboard">
+            <div class="navbar-dash">
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search here...">
+                </div>
+                <div class="icon-dash">
+                    <a href="/"><i class="fa-solid fa-bell"></i></a>
+                    <button>Post a Job</button>
+                </div>
+            </div>
+            <h5>Dashboard</h5>
+            <div class="tabs">
+                <div class="tab1">
+                    <div>
+                        <h3>1.7k+</h3>
+                        <h4>Total Visitors</h4>
+                    </div>
+                    <div class="tab1-icon"><i class="fa-regular fa-user"></i></div>
+                </div>
+                <div class="tab2">
+                    <div>
+                        <h3>03</h3>
+                        <h4>Shortlisted</h4>
+                    </div>
+                    <div class="tab2-icon"><i class="fa-regular fa-bookmark"></i></div>
+                </div>
+                <div class="tab3">
+                    <div>
+                        <h3>2.1k</h3>
+                        <h4>Views</h4>
+                    </div>
+                    <div class="tab3-icon"><i class="fa-regular fa-eye"></i></div>
+                </div>
+                <div class="tab4">
+                    <div>
+                        <h3>09</h3>
+                        <h4>Applied Job</h4>
+                    </div>
+                    <div class="tab4-icon"><i class="fa-solid fa-pen-to-square"></i></div>
+                </div>
+            </div>
+            <div class="data">
+                <div class="graph">
+                    <h3>Profile Views</h3><hr><br>
+                    <img src="https://jobi-svelte.vercel.app/assets/images/dashboard/main-graph.png" alt="graph">
+                </div>
+                <div class="jobs">
+                    <h3>Recent Applied Job</h3><hr><br>
+                    <div class="job-icon">
+                        <div class="job-icon1">
+                            <img src="https://jobi-svelte.vercel.app/assets/images/logo/media_22.png" alt="icon1">
+                            <div class="job-name1">
+                                <a href="/">Web and Mobile Prototype</a>
+                                <h6>Fulltime. Mumbai</h6>
+                            </div>
+                        </div>
+                        <div class="job-icon2">
+                            <img src="https://jobi-svelte.vercel.app/assets/images/logo/media_23.png" alt="icon2">
+                            <div class="job-name2">
+                                <a href="/">Document Writer</a>
+                                <h6>Fulltime. Mumbai</h6>
+                            </div>
+                        </div>
+                        <div class="job-icon3">
+                            <img src="https://jobi-svelte.vercel.app/assets/images/logo/media_24.png" alt="icon3">
+                            <div class="job-name3">
+                                <a href="/">Outbound and Call Service</a>
+                                <h6>Fulltime. Mumbai</h6>
+                            </div>
+                        </div>
+                        <div class="job-icon4">
+                            <img src="https://jobi-svelte.vercel.app/assets/images/logo/media_25.png" alt="icon4">
+                            <div class="job-name4">
+                                <a href="/">Copy Image Address</a>
+                                <h6>Part-Time. Kolkata</h6>
+                            </div>
+                        </div>
+                        <div class="job-icon5">
+                            <img src="https://jobi-svelte.vercel.app/assets/images/logo/media_26.png" alt="icon5">
+                            <div class="job-name5">
+                                <a href="/">Marketing Specialist</a>
+                                <h6>Fulltime. Pune</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

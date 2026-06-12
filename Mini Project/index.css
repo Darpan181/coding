@@ -1,0 +1,640 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Qwigley&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Nunito Sans", sans-serif;
+}
+html{
+    font-size: 62.5%; /*1rem= 10px*/
+}
+h6{
+    font-family: "Nunito Sans", sans-serif;
+}
+p,li,a{
+    font-family: "Roboto Slab", serif;
+    font-size: 1.8rem;
+    letter-spacing: 0.1rem;
+    font-weight: 400;
+    color: white;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+
+.container{
+    max-width: 142rem;
+    margin: 0 auto;
+    padding: 9.6rem 2.4rem;
+}
+.section-navbar{
+    width: 100%;
+    position:fixed;
+    background-color: #154a38;
+}
+.navbar-brand img{
+    background-color: white;
+    border-radius: 1rem;
+}
+.section-navbar .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.8rem;
+}
+.section-navbar .navbar ul{
+    display: flex;
+    gap: 3.2rem;
+
+    & li a{
+        font-weight: 600;
+        font-size: 2rem;
+        display: inline-block;
+        position: relative;
+
+        &::after{
+            content: "";
+            position: absolute;
+            bottom: -0.3rem;
+            left: 0;
+            width: 0%;
+            border-bottom: 0.15rem solid yellowgreen;
+            transition: all 0.3s linear;
+        }
+    }
+
+    & li a:hover:after{
+        width: 100%;
+    }
+}
+.section-navbar .nav-login ul{
+    display: flex;
+    gap: 3.2rem;
+
+    & li a {
+        font-weight: 600;
+        font-size: 2.4rem;
+    }
+}
+.hire-box{
+    border: 0.3rem solid yellow;
+    border-radius: 25%;
+    background-color: yellow;
+    position: relative;
+    transition: all 0.3s linear;
+}
+.hire-box:hover{
+    background-color: #154a38;
+    color: yellow;
+}
+.hire-box a:hover{
+    color: yellow;
+}
+.hire-box a{
+    color: black;
+}
+
+.grid{
+    display: grid;
+}
+.grid-two--cols{
+    grid-template-columns: repeat(2, 1fr);
+}
+main{
+    background-color: #154a38;
+}
+.section-hero--image img{
+    width: 100%;
+    height: 100vh;
+    box-shadow: -10px 10px 0px 0px rgba(219,216,216,0.69),
+-20px 20px 0px 0px rgba(203,200,200,0.7),
+-30px 30px 0px 0px rgba(210,195,195,0.4),
+-40px 40px 0px 0px rgba(33,33,33,0.1);
+}
+.section-hero .grid{
+    align-items: center;
+    gap: 6.4rem;
+
+    & .hero-subheading{
+        letter-spacing: 0.2rem;
+        font-size: 7rem;
+        word-spacing: 0.2rem;
+        font-weight: 600;
+    }
+
+    & .hero-heading{
+        font-size: 6rem;
+        line-height: 6rem;
+        color: yellowgreen;
+    }
+
+    & .hero-para{
+        color: white;
+        margin: 2rem 0 6rem 0;
+    }
+
+    & h3{
+        color: white;
+        font-size: 2rem;
+    }
+}
+.search-box{
+    display: flex;
+    width: 60rem;
+    height: 10rem;
+    margin-bottom: 2rem;
+    border: 0.2rem solid black;
+    border-radius: 3rem;
+    position: relative;
+    right: -13rem;
+}
+.search-btn{
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+    background-color: yellowgreen;
+    width: 10rem;
+    border-top-right-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+    transition: all 0.1s linear;
+    & a{
+        color: black;
+        font-weight: 800;
+    }
+}
+.search-btn:hover{
+    background-color: #6EC207;
+    transform: scale(1.05);
+}
+.search-1{
+    width: 25rem;
+    border: none;
+    border-top-left-radius: 3rem;
+    border-bottom-left-radius: 3rem;
+    font-size: 1.5rem;
+    border-right: 0.1rem solid grey;
+}
+
+.search-2{
+    width: 25rem;
+    border: none;
+    font-size: 1.5rem;
+}
+
+.categories{
+    width: 100%;
+    height: 100vh;
+    background-color: #CEDF9F;
+}
+.main-category{
+    display: flex;
+    height: 40vh;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+.category-1{
+    display: flex;
+    width: 50%;
+    padding-left: 2rem;
+    font-family: "Roboto Slab", serif;
+    font-size: 4rem;
+    letter-spacing: 0.1rem;
+    font-weight: 700;
+    color: #154a38;
+    position: relative;
+}
+.leaf-image{
+    position: absolute;
+    top: -1.9rem;
+    right: 2.7rem;
+}
+.category-2{
+    width: 50%;
+    font-size: 2rem;
+    color: brown;
+}
+.tabs{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.tab1{
+    background-color: white;
+    width: 15%;
+    height: 25rem;
+    border: 0.3rem yellowgreen solid;
+    border-radius: 25%;
+    display: grid;
+    align-items: flex-start;
+    text-align: center;
+    transition: all 0.3s linear;
+    & a{
+        font-size: 2rem;
+        color: black;
+        font-weight: 600;
+    }
+    & h5{
+        font-size: 1.3rem;
+    }
+    & .tab1-btn{
+        width: 5rem;
+        height: 8rem;
+        border: none;
+        background-color: white;
+        font-size: 3.5rem;
+        transition: all 0.3s linear;
+    }
+}
+.tab1:hover{
+    background-color: yellowgreen;
+    transform: scale(1.1);
+    & .tab1-btn{
+        background-color: yellowgreen;
+    }
+}
+.tab2{
+    background-color: white;
+    width: 15%;
+    height: 25rem;
+    border: 0.3rem yellowgreen solid;
+    border-radius: 25%;
+    display: grid;
+    align-items: flex-start;
+    text-align: center;
+    transition: all 0.3s linear;
+    & a{
+        font-size: 2rem;
+        color: black;
+        font-weight: 600;
+    }
+    & h5{
+        font-size: 1.3rem;
+    }
+    & .tab2-btn{
+        width: 5rem;
+        height: 8rem;
+        border: none;
+        background-color: white;
+        font-size: 3.5rem;
+        transition: all 0.3s linear;
+    }
+}
+.tab2:hover{
+    background-color: yellowgreen;
+    transform: scale(1.1);
+    & .tab2-btn{
+        background-color: yellowgreen;
+    }
+}
+.tab3{
+    background-color: white;
+    width: 15%;
+    height: 25rem;
+    border: 0.3rem yellowgreen solid;
+    border-radius: 25%;
+    display: grid;
+    align-items: flex-start;
+    text-align: center;
+    transition: all 0.3s linear;
+    & a{
+        font-size: 2rem;
+        color: black;
+        font-weight: 600;
+    }
+    & h5{
+        font-size: 1.3rem;
+    }
+    & .tab3-btn{
+        width: 5rem;
+        height: 8rem;
+        border: none;
+        background-color: white;
+        font-size: 3.5rem;
+        transition: all 0.3s linear;
+    }
+}
+.tab3:hover{
+    background-color: yellowgreen;
+    transform: scale(1.1);
+    & .tab3-btn{
+        background-color: yellowgreen;
+    }
+}
+.tab4{
+    background-color: white;
+    width: 15%;
+    height: 25rem;
+    border: 0.3rem yellowgreen solid;
+    border-radius: 25%;
+    display: grid;
+    align-items: flex-start;
+    text-align: center;
+    transition: all 0.3s linear;
+    & a{
+        font-size: 2rem;
+        color: black;
+        font-weight: 600;
+    }
+    & h5{
+        font-size: 1.3rem;
+    }
+    & .tab4-btn{
+        width: 5rem;
+        height: 8rem;
+        border: none;
+        background-color: white;
+        font-size: 3.5rem;
+        transition: all 0.3s linear;
+    }
+}
+.tab4:hover{
+    background-color: yellowgreen;
+    transform: scale(1.1);
+    & .tab4-btn{
+        background-color: yellowgreen;
+    }
+}
+.tab5{
+    background-color: white;
+    width: 15%;
+    height: 25rem;
+    border: 0.3rem yellowgreen solid;
+    border-radius: 25%;
+    display: grid;
+    align-items: flex-start;
+    text-align: center;
+    transition: all 0.3s linear;
+    & a{
+        font-size: 2rem;
+        color: black;
+        font-weight: 600;
+    }
+    & h5{
+        font-size: 1.3rem;
+    }
+    & .tab5-btn{
+        width: 5rem;
+        height: 8rem;
+        border: none;
+        background-color: white;
+        font-size: 3.5rem;
+        transition: all 0.3s linear;
+    }
+}
+.tab5:hover{
+    background-color: yellowgreen;
+    transform: scale(1.1);
+    & .tab5-btn{
+        background-color: yellowgreen;
+    }
+}
+.tab6{
+    background-color: white;
+    width: 15%;
+    height: 25rem;
+    border: 0.3rem yellowgreen solid;
+    border-radius: 25%;
+    display: grid;
+    align-items: flex-start;
+    text-align: center;
+    transition: all 0.3s linear;
+    & a{
+        font-size: 2rem;
+        color: black;
+        font-weight: 600;
+    }
+    & h5{
+        font-size: 1.3rem;
+    }
+    & .tab6-btn{
+        width: 5rem;
+        height: 8rem;
+        border: none;
+        background-color: white;
+        font-size: 3.5rem;
+        transition: all 0.3s linear;
+    }
+}
+.tab6:hover{
+    background-color: yellowgreen;
+    transform: scale(1.1);
+    & .tab6-btn{
+        background-color: yellowgreen;
+    }
+}
+
+.upload-cv{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+.upload{
+    background-color: #154a38;
+    width: 90%;
+    border: 1rem #A0D683 solid;
+    margin: 0.4rem;
+    margin-bottom: 0rem;
+    display: flex;
+    justify-content: center;
+}
+.upload-img{
+    width: 40%;
+    display: flex;
+    align-items: flex-end;
+}
+.upload-next{
+    width: 60%;
+    display: grid;
+    text-align: center;
+    place-items: center;
+    & h4{
+        font-family: "Roboto Slab", serif;
+        font-size: 7rem;
+        font-weight: 400;
+        color: white;
+    }
+    & h5{
+        font-family: "Roboto Slab", serif;
+        font-size: 4rem;
+        font-weight: 400;
+        color: grey;
+    }
+    & p{
+        font-family: "Roboto Slab", serif;
+        font-size: 7rem;
+        font-weight: 400;
+        color: yellowgreen;
+    }
+    & button{
+        display: flex;
+        font-size: 6rem;
+        color: black;
+        padding: 0.5rem;
+        gap: 1rem;
+        border-radius: 1rem;
+        cursor: pointer;
+        background-color: #6EC207;
+        transition: all 0.2s linear;
+    }
+    & button:hover{
+        color:#6EC207;
+        background-color: black;
+    }
+}
+.post-job{
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+}
+.post-text{
+    width: 60%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 1rem;
+    & h4{
+        font-family: "Roboto Slab", serif;
+        font-size: 6.5rem;
+        font-weight: 600;
+        color: black;
+    }
+    & h5{
+        font-family: "Roboto Slab", serif;
+        font-size: 3rem;
+        font-weight: 400;
+        color: grey;
+    }
+}
+.post-btn{
+    width: 40%;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    & .look-btn{
+        width: 18rem;
+        height: 6rem;
+        padding: 0.5rem;
+        border-radius: 1rem;
+        font-size: 2rem;
+        font-weight: 600;
+        color: #154a38;
+        background-color: white;
+        transition: all 0.2s linear;
+    }
+    & .look-btn:hover{
+        color: white;
+        background-color: #154a38;
+        cursor: pointer;
+    }
+    & .job-btn{
+        width: 15rem;
+        height: 6rem;  
+        padding: 0.5rem;
+        border-radius: 1rem;
+        font-size: 2rem;
+        font-weight: 600;
+        color: black;
+        background-color: yellow;
+        transition: all 0.2s linear;
+    }
+    & .job-btn:hover{
+        color: white;
+        background-color: #154a38;
+        cursor: pointer;
+    } 
+}
+
+.grid{
+    display: grid;
+}
+.grid-four--cols{
+    grid-template-columns: repeat(4,1fr);
+    & a{
+        color: #6EC207;
+    }
+    & p{
+        color: #6EC207;
+    }
+}
+footer{
+    background-color: black;
+    padding-top: 5rem;
+}
+.footer-2--div{
+    text-align: right;
+    & a{
+        color: #FFE700;
+        font-size: 2rem;
+    }
+}
+.footer-3--div{
+    margin: 0.3rem;
+    text-align: right;
+    & a{
+        color: #FFE700;
+        font-size: 2rem;
+    }
+}
+.footer-4--div{
+    text-align: right;
+    & a{
+        color: #FFE700;
+        font-size: 2rem;
+    }
+}
+.footer-subheading{
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+.common-text--highlight{
+    width: 6rem;
+    aspect-ratio: 1;
+    background-color: white;
+    color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.4rem;
+    font-weight: 700;
+    border-radius: 50%;
+}
+.footer-1--div{
+    & .social-footer--icons{
+        display: flex;
+        gap: 2.4rem;
+    
+    & .fa-brands{
+        width: 5rem;
+        aspect-ratio: 1;
+        background-color: white;
+        color: purple;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s linear;
+
+        &:hover{
+            color: white;
+            background-color: yellowgreen;
+            rotate: 360deg;
+        }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+

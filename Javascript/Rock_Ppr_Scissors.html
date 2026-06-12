@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .title{
+            width: 100%;
+            height: 50px;
+            background-color: navy;
+            color: white;
+            text-align: center;
+        }
+        .iconSpace{
+            width: 100%;
+            height: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        img{
+            width: 200px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            margin: 10px;
+            border: 2px dotted black;
+            object-fit:contain; /* IMPORTANT*/
+        }
+        img:hover{
+            border: 5px solid black;
+            opacity: 0.5;
+            cursor: pointer;
+        }
+        .dataSpace{
+            width: 100%;
+            height: 280px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content:center;
+        }
+        .points{
+            height: 50px;
+            display: flex;
+            column-gap: 210px;
+            font-size: 40px;
+            margin-bottom: 3px;
+            & p{
+                font-weight: 900;
+            }
+        }
+        .player-name{
+            height: 50px;
+            display: flex;
+            column-gap: 180px;
+        }
+        button{
+            width: 300px;
+            height: 60px;
+            border-radius: 30px;
+            font-size: 15px;
+            background-color: greenyellow;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">
+        <h1>Rock Paper Scissors</h1>
+    </div>
+    <div class="iconSpace">
+        <div class="icon" id="rock">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlZOWMDyI-Q4l0UFgNSb7yIEo6rC7nt-cK-ER5CxaFB2hPm95xJxyz42cv5xCwap7bfdw&usqp=CAU" alt="rock">
+        </div>
+        <div class="icon" id="paper">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVNRBisCpu9J5wrG25EfCHr8QFXNZNOchiOK0KBPLlONPG93qWg6LERrz6x1DE-F2ZVCw&usqp=CAU" alt="paper">
+        </div>
+        <div class="icon" id="scissor">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLmzly-f-u4hevY9Me4fwObar29N26lxmh3z0Qke9bqQP45iTDv2ktaveD7tmtPsOxClc&usqp=CAU" alt="scissor">
+        </div>
+    </div>
+    <div class="dataSpace">
+        <div class="points">
+            <p id="user-score">0</p>
+            <p id="comp-score">0</p>
+        </div>
+        <div class="player-name">
+            <p>You</p>
+            <p>Computer</p>
+        </div>
+        <div>
+            <button>Let`s Start</button>
+        </div>
+    </div>
+<script>
+    let userScore = 0;
+    let compScore = 0;
+
+    let msg = document.querySelector("button");
+
+
+    let choices = document.querySelectorAll(".icon");
+    choices.forEach((val) => {
+        val.addEventListener("click" , () => {
+            const userChoice = val.getAttribute("id");
+            playGame(userChoice);
+        });
+    });
+
+    const playGame = (userChoice) => {
+        console.log("User`s choice =",userChoice);
+        // generate computer choice
+        const compChoice = genCompChoice();
+
+        if(userChoice === compChoice){
+            msg.innerText = "Game is Draw";
+            msg.style.backgroundColor = "greenyellow"
+        } 
+        else{
+            let userWin = true;
+            if(userChoice === "rock"){
+                userWin = compChoice === "paper" ? false : true;
+            } else if(userChoice === "paper"){
+                userWin = compChoice === "scissor" ? false : true;
+            } else{
+                userWin = compChoice === "rock" ? false : true;
+            }
+            showWinner(userWin , userChoice , compChoice);
+        }       
+    }
+
+    const showWinner = (userWin , userChoice , compChoice) => {
+        if(userWin){
+            msg.innerText = `You Win! \n Your ${userChoice} beats ${compChoice}`;
+            msg.style.backgroundColor = "green";
+            userScore++;
+            document.querySelector("#user-score").innerText = userScore;
+        }
+        else{
+            msg.innerText = `You Lost! \n ${compChoice} beats ${userChoice}`;
+            msg.style.backgroundColor = "red";
+            compScore++;
+            document.querySelector("#comp-score").innerText = compScore;
+        } 
+    }
+
+    const genCompChoice = () => {
+        const options = ["rock" , "paper" , "scissor"];
+        let rndIdx = Math.floor(Math.random() * 3);
+        let compChoice = options[rndIdx];
+        console.log("Comp`s choice =",compChoice);
+        return compChoice;
+    }
+</script>
+</body>
+</html>

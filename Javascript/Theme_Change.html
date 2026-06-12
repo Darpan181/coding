@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Change</title>
+    <style>
+        #head{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        button{
+            height: 200px;
+            width: 600px;
+            font-size: 50px;
+            border: 4px solid goldenrod;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="head">
+        <button>Change Mode</button>
+    </div>   
+</body>
+<script>
+    let btn = document.querySelector("button");
+let currMode = "light";
+
+btn.addEventListener("click" , () => {
+    if(currMode == "light"){
+        currMode = "dark";
+        document.body.style.backgroundColor = "black";
+        btn.style.backgroundColor = "yellow";
+    }
+    else{
+        currMode = "light";
+        document.body.style.backgroundColor = "white";
+        btn.style.backgroundColor = "grey";
+    }
+    console.log(currMode);
+});
+</script>
+</html>

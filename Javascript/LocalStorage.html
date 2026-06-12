@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+    <style>
+        div{
+            height: 100vh;
+            width: 100%;
+            background-color: black;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        button{
+            border-radius: 20px;
+            height: 50px;
+            width: 250px;
+            font-weight: 600;
+            color: azure;
+            cursor: pointer;
+        }
+        #addBtn{
+            background-image: linear-gradient(to right, #0B09C2, #9CEBFF);
+        }
+        #getBtn{
+            background-image: linear-gradient(to right, #997669, #678229);
+        }
+        #removeBtn{
+            background-image: linear-gradient(to right, #F4BF45, #E94598);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button id="addBtn">Add data to Local Storage</button>
+        <button id="getBtn">Get data from Local Storage</button>
+        <button id="removeBtn">Delete data from Local Storage</button>
+    </div>
+<script>
+    const studentBioData = {
+        firstName: "Darpan",
+        lastName: "Pawar",
+        age: 20,
+        gender: "Male",
+        grade: "A",
+        courses: ["Math", "Physics", "Chemistry"],
+        address: {
+            street: "123 Main St",
+            city: "CityVille",
+            state: "Uttar Pradesh",
+            zipCode: "201005",
+        },
+    };
+
+    const addTodoList = () => {
+        localStorage.setItem("objectData", JSON.stringify(studentBioData));// object ko string m convert krne k liye
+    }
+    const getTodoList = () => {
+        const retrieveData = JSON.parse(localStorage.getItem("objectData"));// string ko object m convert krne k liye
+        console.log(retrieveData);
+        console.log(typeof retrieveData);
+    }
+    const removeTodoList = () => {
+        localStorage.removeItem("objectData");
+    };
+
+    document.getElementById("addBtn").addEventListener("click", () => {
+        addTodoList();
+    });
+    document.getElementById("getBtn").addEventListener("click", () => {
+        getTodoList();
+    });
+    document.getElementById("removeBtn").addEventListener("click", () => {
+        removeTodoList();
+    });
+</script>
+</body>
+</html>

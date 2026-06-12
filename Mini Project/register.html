@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+    <header class="section-navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <a href="Home.html">
+                    <img src="https://jobbox-nextjs-v3.vercel.app/assets/imgs/template/jobhub-logo.svg" alt="my_logo" width="80%" height="auto">
+                </a>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li class="nav-item"><a href="Candidate_Dash.html" class="nav-link">Candidate Dashboard</a></li>
+                    <li class="nav-item"><a href="Employer_Dash.html" class="nav-link">Employer Dashboard</a></li>
+                    <li class="nav-item"><a href="Home.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="Job.html" class="nav-link">Job</a></li>
+                    <li class="nav-item"><a href="/" class="nav-link">Blog</a></li>
+                    <li class="nav-item"><a href="/" class="nav-link">Post Job</a></li>
+                </ul>
+            </nav>
+            <nav class="nav-login">
+                <ul>
+                    <li class="login-items"><a href="/" class="login-link">Login</a></li>
+                    <div class="hire-box">
+                        <li class="login-items"><a href="Candidate.html" class="login-link">Hire Talent</a></li>
+                    </div>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <h1>Create an Account</h1>
+        <form action="#" method="POST" class="form">
+            <label for="full-name">Full Name</label>
+            <input type="text" id="full-name" name="full-name" required placeholder="John Doe">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="you@example.com">
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required placeholder="******">
+
+            <label for="confirm-password">Confirm Password</label>
+            <input type="password" id="confirm-password" name="confirm-password" required placeholder="******">
+
+            <button type="submit">Create Account</button>
+        </form>
+        <p class="login-link">Already have an account? <a href="#">Log in</a></p>
+    </div>
+</body>
+</html>

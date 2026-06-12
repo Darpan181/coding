@@ -1,0 +1,30 @@
+*{
+    margin:0;
+    padding:0;
+}
+.parent{
+    margin:0 auto;
+    height:90vh;
+    width:80vh;
+    background-image: linear-gradient(45deg,rgb(13, 137, 244),white);
+    margin-left: 400px;
+    position: relative;
+}
+.child{
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    background-image: linear-gradient(to right top,grey,white);
+}
+.child2{
+    top: 0;
+    right: 0;
+}
+.child3{
+    bottom:0;
+    right: 0;
+}
+.child4{
+    bottom: 0;
+    left: 0;
+}

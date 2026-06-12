@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Application</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+        body{
+            background: black;
+            color: black;
+        }
+        .container{
+            background-color: aliceblue;
+            color: black;
+            padding: 2rem;
+            width: 40%;
+            margin: 4rem auto;
+            border-radius: 10px; 
+        }
+        .weather_header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        input{
+            border: none;
+            background: black;
+            color: white;
+            outline: none;
+            padding: 0.5rem 2.5rem;
+            border-radius: 5px;
+        }
+        input::placeholder{
+            color: whitesmoke;
+        }
+        .weather_search{
+            position: relative;
+        }
+        .weather_search i{
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            font-size: 15px;
+            color: white;
+        }
+        .weather_units {
+            font-size: 1.5rem;
+          }
+          
+          .weather_units span {
+            cursor: pointer;
+          }
+          
+          .weather_units span:first-child {
+            margin-right: 0.5rem;
+          }
+          
+          .weather_body {
+            text-align: center;
+            margin-top: 3rem;
+          }
+          
+          .weather_datetime {
+            margin-bottom: 2rem;
+            font-size: 14px;
+          }
+          
+          .weather_forecast {
+            background: #1e1e1e;
+            /* background-color: #f7f7f7; */
+            color: #fff;
+            /* color: #171717; */
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+          }
+          
+          .weather_icon img {
+            width: 100px;
+            filter: drop-shadow(2px 4px 6px black);
+            -webkit-filter: drop-shadow(2px 4px 6px black);
+          }
+          
+          .weather_temperature {
+            font-size: 1.75rem;
+          }
+          
+          .weather_minmax {
+            display: flex;
+            justify-content: center;
+          }
+          
+          .weather_minmax p {
+            font-size: 14px;
+            margin: 0.5rem;
+          }
+          
+          .weather_info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 1rem;
+            margin-top: 3rem;
+          }
+          
+          .weather_card {
+            display: flex;
+            align-items: center;
+            background: #1e1e1e;
+            background-color: #f7f7f7;
+            color: #000;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+          }
+          
+          .weather_card i {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+          }
+          
+          .weather_card p {
+            font-size: 14px;
+          }
+          
+          @media (max-width: 936px) {
+            .container {
+              width: 90%;
+            }
+          
+            .weather_header {
+              flex-direction: column;
+            }
+          
+            .weather_units {
+              margin-top: 1rem;
+            }
+          }
+          
+          @media (max-width: 400px) {
+            .weather_info {
+              grid-template-columns: none;
+            }
+          }
+    </style>
+</head>
+<body>
+    <section class="container">
+        <div class="weather_header">
+            <form class="weather_search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" class="city_name" placeholder="Search your city...">
+            </form>
+        </div>
+        <div class="weather_body">
+            <h1 class="weather_city"></h1>
+            <p class="weather_date_time"></p>
+            <div class="weather_data">
+                <p class="weather_forecast"></p>
+                <div class="weather_icon"></div>
+            </div>
+            <p class="weather_temperature"></p>
+            <div class="weather_minmax">
+                <p class="weather_min"></p>
+                <p class="weather_max"></p>
+            </div>
+        </div>
+        <section class="weather_info">
+            <div class="weather_card">
+                <i class="fa-solid fa-temperature-quarter"></i>
+                <div>
+                    <p>Feels like</p>
+                    <p class="weather_feelslike">15&#176</p>
+                </div>
+            </div>
+
+            <div class="weather_card">
+                <i class="fa-solid fa-droplet"></i>
+                <div>
+                    <p>Humidity</p>
+                    <p class="weather_humidity">15&#176</p>
+                </div>
+            </div>
+
+            <div class="weather_card">
+                <i class="fa-solid fa-wind"></i>
+                <div>
+                    <p>Wind</p>
+                    <p class="weather_wind">15&#176</p>
+                </div>
+            </div>
+
+            <div class="weather_card">
+                <i class="fa-solid fa-gauge"></i>
+                <div>
+                    <p>Pressure</p>
+                    <p class="weather_pressure">15&#176</p>
+                </div>
+            </div>
+        </section>
+    </section>
+<script>
+    let cityName = document.querySelector(".weather_city");
+    let dateTime = document.querySelector(".weather_date_time");
+    let w_forecast = document.querySelector(".weather_forecast");
+    let w_temperature = document.querySelector(".weather_temperature");
+    let w_icon = document.querySelector(".weather_icon");
+    let w_minTem = document.querySelector(".weather_min");
+    let w_maxTem = document.querySelector(".weather_max");
+
+    let w_feelslike = document.querySelector(".weather_feelslike");
+    let w_humidity = document.querySelector(".weather_humidity");
+    let w_wind = document.querySelector(".weather_wind");
+    let w_pressure = document.querySelector(".weather_pressure");
+
+    let citySearch = document.querySelector(".weather_search");
+
+    const getCountryName = (code) => {
+        return new Intl.DisplayNames([code], {type: "region"}).of(code);
+    };
+
+    const getDateTime = (dt) => {
+        const curDate = new Date(dt * 1000);
+        console.log(curDate);
+
+        const options = {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+            hour: "numeric",
+            minute: "numeric",
+        };
+        const formatter = new Intl.DateTimeFormat("en-US" , options);
+
+        const formattedDate = formatter.format(curDate);
+        return formattedDate;
+    };
+
+    let city = "Delhi";
+
+    citySearch.addEventListener("submit" , (e) => {
+        e.preventDefault();
+
+        let cityName = document.querySelector(".city_name");
+        city = cityName.value;
+        getWeatherData();
+        cityName.value = "";
+    });
+    
+    const getWeatherData = async () => {
+        const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=28861d30c71e88e47527b812e52a80b7`;
+
+        try {
+            const res = await fetch(weatherUrl);
+            const data = await res.json();
+
+            const {main , name , weather , wind , sys , dt} = data;
+
+            cityName.innerHTML = `${name}, ${getCountryName(sys.country)}`;
+            dateTime.innerHTML = getDateTime(dt);
+
+            w_forecast.innerHTML = weather[0].main;
+            w_icon.innerHTML = `<img src = "http://openweathermap.org/img/wn/${weather[0].icon}@4x.png"/>`;
+
+            w_temperature.innerHTML = `${main.temp}&#176`;
+            w_minTem.innerHTML = `Min: ${main.temp_min}&#176`;
+            w_maxTem.innerHTML = `Max: ${main.temp_max}&#176`;
+
+            w_feelslike.innerHTML = `${main.feels_like}&#176`;
+            w_humidity.innerHTML = `${main.humidity}%`;
+            w_wind.innerHTML = `${wind.speed} m/s`;
+            w_pressure.innerHTML = `${main.pressure} hPa`;
+
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    document.body.addEventListener("load" , getWeatherData());
+</script>
+</body>
+</html>

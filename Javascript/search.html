@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+    <h1>JavaScript Course</h1>
+    <input type="text" id="inputField">
+    <button class="btn">Click</button>
+    <div class="todoListElem">
+        <p id="todoFirst"></p>
+    </div>
+    </center>
+</body>
+<script>
+    let inputElem = document.getElementById("inputField");
+    let clickBtn = document.querySelector(".btn");
+    let todoFirst = document.getElementById("todoFirst");   
+    let todoElem = document.querySelector(".todoListElem");
+
+    const addTodo = () => {
+        console.log(inputElem.value);
+        todoFirst.textContent = inputElem.value;
+        let pElem = document.createElement("p");
+        pElem.textContent = inputElem.value;
+        todoElem.append(pElem);
+
+    inputElem.value = " ";
+    }
+
+    clickBtn.addEventListener("click", () => {
+        addTodo();
+    });
+
+</script>
+</html>

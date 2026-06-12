@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carausal</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        html{
+            font-size: 62.5%;
+        }
+        body{
+            height:100vh;
+            display: grid;
+            place-items: center;
+        }
+        .imge{
+            width:70vw;
+            height: 40rem;
+            border-radius: 10px;
+            background-image: url(https://wallpapercave.com/wp/wp3890284.jpg);
+            background-size: contain;
+            animation: gallery 20s linear infinite;
+        }
+        @keyframes gallery{
+            30%{
+                background-image: url(https://wallpapercave.com/uwp/uwp4058110.png);
+            }
+            40%{
+                background-image: url(https://wallpapercave.com/wp/wp12042065.jpg);
+            }
+            55%{
+                background-image: url(https://wallpapercave.com/wp/wp14432367.jpg);
+            }
+            75%{
+                background-image: url(https://wallpapercave.com/wp/wp10181624.jpg);
+            }
+            100%{
+                background-image: url(https://wallpapercave.com/wp/wp4590037.jpg);
+            }
+            /* 100%{
+                background-image: url(https://wallpapercave.com/wp/wp2613062.jpg);
+            } */
+        }
+    </style>
+</head>
+<body>
+    <div class="imge"></div>
+</body>
+</html>

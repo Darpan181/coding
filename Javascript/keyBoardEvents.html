@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeyBoard Events</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        .parent{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input{
+            border: 5px white solid;
+            border-radius: 5px;
+            font-size: 20px;
+        }
+        p{
+            font-size: 20px;
+            color: gold;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <input type="text" id="myInput" placeholder="Type Something...">
+        <div class="output">
+            <p class="keyPressed">Key pressed:</p>
+            <p class="keyCode">Key Code:</p>
+            <p class="charCode">Char Code:</p>
+            <p class="eventType">Event Type:</p>
+        </div>
+    </div>
+    <script>
+        const handleKeyPress = (event) => {
+            console.log(event); 
+            console.log("Key Pressed:", event.key);
+            console.log("Key Code:", event.code);
+            console.log("Char Code", event.key.charCodeAt(0));
+            console.log("Event Type:", event.type);
+            document.querySelector(
+                ".keyPressed"
+            ).textContent = `Key Pressed: ${event.key}`;
+    
+            document.querySelector(
+                ".keyCode"
+            ).textContent = `Key Code: ${event.code}`;
+    
+            document.querySelector(
+                ".charCode"
+            ).textContent = `Char Code: ${event.key.charCodeAt(0)}`;
+    
+            document.querySelector(
+                ".eventType"
+            ).textContent = `Event Type: ${event.type}`;
+        };
+    
+        var myInput = document.getElementById("myInput");
+        myInput.addEventListener("keydown", handleKeyPress);
+    </script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="Profile.css">
+</head>
+<body>
+    <div class="main">
+        <div class="side-nav">
+            <div class="logo-brand">
+                <img src="https://jobbox-nextjs-v3.vercel.app/assets/imgs/template/jobhub-logo.svg" alt="logo-brand">
+            </div>
+            <div class="profile-pic">
+                <img src="https://cdn-icons-png.flaticon.com/512/4042/4042171.png" alt="profile-pic">
+                <select class="cand-name">
+                    <option>Darpan Pawar</option>
+                    <option>Deependra Singh</option>
+                    <option>Chirag Baniya</option>
+                    <option>Devansh Mishra</option>
+                </select>
+            </div>
+            <div class="side-link">
+                <ul>
+                    <a href="/"><li class="side-link-item"><i class="fa-solid fa-border-all"></i> Dashboard</li></a>
+                    <a href="/"><li class="side-link-item2"><i class="fa-solid fa-user"></i> My Profile</li></a>
+                    <a href="/"><li class="side-link-item"><i class="fa-solid fa-file-lines"></i> Resume</li></a>
+                    <a href="/"><li class="side-link-item"><i class="fa-solid fa-message"></i> Messages</li></a>
+                    <a href="/"><li class="side-link-item"><i class="fa-solid fa-bell"></i> Job Alert</li></a>
+                    <a href="/"><li class="side-link-item"><i class="fa-solid fa-bookmark"></i> Saved Job</li></a>
+                    <a href="/"><li class="side-link-item"><i class="fa-solid fa-gear"></i> Account Settings</li></a>
+                    <a href="/"><li class="side-link-item"><i class="fa-solid fa-trash"></i> Delete Account</li></a>
+                </ul>
+            </div>
+            <div class="status-bar">
+                <h3>89%</h3>
+                <div></div>
+                <h4>Profile Complete</h4>
+                <a href="/">Logout</a>
+            </div>
+        </div>
+        <div class="dashboard">
+            <div class="navbar-dash">
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search here...">
+                </div>
+                <div class="icon-dash">
+                    <a href="/"><i class="fa-solid fa-bell"></i></a>
+                    <button>Post a Job</button>
+                </div>
+            </div>
+            <h5>My Profile</h5>
+            <form class="form1">
+                <div>
+                    <label for="file">Upload photo</label>
+                    <input type="file" name="file-upload" required>
+                </div>
+                <div class="form1-a">
+                    <label for="name">Full Name*</label>
+                    <input type="text" id="name" placeholder="Enter name here...">
+                </div>
+                <div class="form1-b">
+                    <label for="bio">Bio*</label>
+                    <textarea name="bio" id="biol" cols="30" rows="8" placeholder="Write something about you..."></textarea>
+                    <h5>Brief description for your profile. URLs are hyperlinked.</h5>
+                </div>
+            </form><br><br>
+            <form class="form2">
+                <h2>Social Media</h2>
+                <div class="form1-a">
+                    <label for="id1">Network 1</label>
+                    <input type="text" id="id1" placeholder="www.facebook.com" required>
+                </div>
+                <div class="form1-b">
+                    <label for="id2">Network 2</label>
+                    <input type="text" id="id2" placeholder="www.twitter.com" required>
+                    <button>+ Add more link</button>
+                </div>
+            </form><br>
+            <form class="form3">
+                <h2>Address & Location</h2>
+                <div class="form3-a">
+                    <label for="add">Address*</label>
+                    <input type="text" id="add" placeholder="Greater Noida" required>
+                </div>
+                <div class="form3-b">
+                    <div>
+                        <label for="country">Country*</label>
+                        <input type="text" id="country" name="country" list="countries">
+                        <datalist id="countries">
+                            <option value="India"></option>
+                            <option value="Canada"></option>
+                            <option value="USA"></option>
+                        </datalist>
+                    </div>
+                    <div>
+                        <label for="city">City*</label>
+                        <input type="text" id="city" name="city" list="cities">
+                        <datalist id="cities">
+                            <option value="Delhi"></option>
+                            <option value="Sydney"></option>
+                            <option value="Bangalore"></option>
+                            <option value="Washington"></option>
+                        </datalist>
+                    </div>
+                    <div>
+                        <label for="state">State*</label>
+                        <input type="text" id="state" name="state" list="states">
+                        <datalist id="states">
+                            <option value="Delhi"></option>
+                            <option value="Mumbai"></option>
+                            <option value="Kolkata"></option>
+                            <option value="Chennai"></option>
+                        </datalist>
+                    </div>
+                    <div>
+                        <label for="pincode">Pincode*</label>
+                        <input type="number" id="number" max="201005" min="104311" value="201102">
+                    </div>
+                </div>
+                <div class="form3-c">
+                    <label for="map">Map Location*</label>
+                    <input type="text" id="map" placeholder="XC23+6Y3, NI05">
+                </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d896696.7891569451!2d76.48019355590058!3d28.608120629007022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ceb193588358f%3A0x8274cec5a1321578!2sGL%20Bajaj%20Institute%20of%20Technology%20%26%20Management!5e0!3m2!1sen!2sin!4v1730368002425!5m2!1sen!2sin" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe><br><br>
+                <input type="submit" value="Submit" id="sbmt">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

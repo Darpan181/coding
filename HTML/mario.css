@@ -1,0 +1,25 @@
+body{
+    width: 100%;
+    height: 90vh;
+    background-image: url("https://wallpapercave.com/wp/wp4021193.jpg");
+    background-size: 100% 100%;
+}
+img{
+    filter: drop-shadow(0 0 0 red);
+    width: 100px;
+    position: absolute;
+    bottom: 9%;
+    animation: mariorun 3s linear;
+    animation-iteration-count: infinite;
+}
+@keyframes mariorun{
+        0%{
+            translate: 0vw;
+        }
+        50%{
+            translate: 90vw -20vw;
+        }
+        100%{
+            translate: 90vw;
+        }
+}
